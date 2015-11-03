@@ -17,5 +17,7 @@
     <import resource="spring-mvc.xml"/>
 
     <!-- SpringData -->
-    <import resource="spring-jpa.xml"/>    
+    <import resource="spring-jpa.xml"/>
+
+
 </beans>
