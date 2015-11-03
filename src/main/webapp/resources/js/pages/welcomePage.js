@@ -1,11 +1,11 @@
-function contactsController($scope, $http) {
+function welcomeController($scope, $http) {
     $scope.pageToGet = 0;
 
     $scope.state = 'busy';
 
     $scope.lastAction = '';
 
-    $scope.url = "/vote-no-restaurante/protected/contacts/";
+    $scope.url = "/vote-no-restaurante/protected/";
 
     $scope.errorOnSubmit = false;
     $scope.errorIllegalAccess = false;
@@ -19,17 +19,12 @@ function contactsController($scope, $http) {
 
     $scope.searchFor = ""
 
-    $scope.getContactList = function () {
-        var url = $scope.url;
-        $scope.lastAction = 'list';
-
-        $scope.startDialogAjaxRequest();
-
-        var config = {params: {page: $scope.pageToGet}};
-
-        $http.get(url, config)
+    $scope.getRestaurantList = function () {
+        var url = $scope.url + "/home/";
+        
+        $http.get(url)
             .success(function (data) {
-                $scope.finishAjaxCallOnSuccess(data, null, false);
+                $scope.restaurants = data;
             })
             .error(function () {
                 $scope.state = 'error';
@@ -37,7 +32,20 @@ function contactsController($scope, $http) {
             });
     }
 
-    $scope.populateTable = function (data) {
+    $scope.vote = function (restaurant) {
+        var url = $scope.url + "/vote/";
+
+        $http.put(url, restaurant)
+            .success(function (data) {
+                
+            })
+            .error(function () {
+                $scope.state = 'error';
+                $scope.displayCreateContactButton = false;
+            });
+    }
+
+    /*$scope.populateTable = function (data) {
         if (data.pagesCount > 0) {
             $scope.state = 'list';
 
@@ -247,7 +255,7 @@ function contactsController($scope, $http) {
         $scope.pageToGet = 0;
         $scope.getContactList();
         $scope.displaySearchMessage = false;
-    }
+    }*/
 
-    $scope.getContactList();
+    $scope.getRestaurantList();
 }

@@ -11,7 +11,9 @@ public class Restaurant {
 
     private String name;
     private int votes;
+    private String type;
     private String img;
+    private String description;
 
     public int getId() {
         return id;
@@ -33,11 +35,27 @@ public class Restaurant {
         this.votes = votes;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public String getImg() {
         return img;
     }
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
