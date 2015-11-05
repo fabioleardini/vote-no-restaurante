@@ -14,4 +14,12 @@ public class UserService {
     public User findByEmail(String email){
         return userRepository.findByEmail(email);
     }
+
+    public boolean userExists(User user){
+        return (findByEmail(user.getEmail()) != null);
+    }
+
+    public void save(User user){
+        userRepository.save(user);
+    }
 }

@@ -7,16 +7,36 @@ import javax.persistence.*;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    private int restaurantId;
 
     private String name;
-    private int votes;
+    private int totalGrade;
+
+    @Transient
+    private int userGrade;
+
     private String type;
     private String img;
     private String description;
 
-    public int getId() {
-        return id;
+    public Restaurant() {
+    }
+
+    public Restaurant(String name, int totalGrade, String type, String img, String description) {
+        super();
+        this.name = name;
+        this.totalGrade = totalGrade;
+        this.type = type;
+        this.img = img;
+        this.description = description;
+    }
+
+    public int getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(int id) {
+        this.restaurantId = id;
     }
 
     public String getName() {
@@ -27,12 +47,20 @@ public class Restaurant {
         this.name = name;
     }
 
-    public int getVotes() {
-        return votes;
+    public int getTotalGrade() {
+        return totalGrade;
     }
 
-    public void setVotes(int votes) {
-        this.votes = votes;
+    public void setTotalGrade(int totalGrade) {
+        this.totalGrade = totalGrade;
+    }
+
+    public int getUserGrade() {
+        return userGrade;
+    }
+
+    public void setUserGrade(int userGrade) {
+        this.userGrade = userGrade;
     }
 
     public String getType() {

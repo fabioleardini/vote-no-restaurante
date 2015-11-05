@@ -10,15 +10,14 @@
     <link href="<c:url value='/resources/css/project_style.css'  />" rel="stylesheet"/>
     <script src="<c:url value='/resources/js/jquery-1.9.1.min.js' />"></script>
     <script src="<c:url value='/resources/js/angular.min.js' />"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
     <body>
         <div class="container">
-            <tiles:insertAttribute name="header" />
             <tiles:insertAttribute name="body" />
         </div>
 
         <link href="https://bootswatch.com/superhero/bootstrap.min.css" rel="stylesheet"/>
-
-        <tiles:insertAttribute name="footer" />
     </body>
 </html>

@@ -9,22 +9,32 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "system_user")
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int userid;
 
     private String email;
     private String name;
 
-    public int getId() {
-        return id;
+    private int rankingid;
+
+    public User() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public User(String email, String name) {
+        this.email = email;
+        this.name = name;
+    }
+
+    public int getUserId() {
+        return userid;
+    }
+
+    public void setUserId(int id) {
+        this.userid = id;
     }
 
     public String getEmail() {
@@ -41,5 +51,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getRankingId() {
+        return rankingid;
+    }
+
+    public void setRankingId(int rankingid) {
+        this.rankingid = rankingid;
     }
 }

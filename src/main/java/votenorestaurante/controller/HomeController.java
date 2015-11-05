@@ -12,9 +12,6 @@ import votenorestaurante.service.RestaurantService;
 @RequestMapping(value = "/")
 public class HomeController {
 
-    @Autowired
-    RestaurantService restaurantService;
-
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
     public String redirect(){
         return "redirect:/protected/home";
