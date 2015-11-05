@@ -22,7 +22,7 @@
 		</ul>
 	</div>
 	<div class="row-fluid">
-		<h2><spring:message code="ranking.user"/> {{ ranking.userEmail }}</h2>
+		<h2><spring:message code="ranking.user"/> {{ useremail }}</h2>
 	    <ul class="list-group">
 		  <li class="list-group-item" ng-repeat="ranking in rankings">
 		    <span class="badge">{{ ranking.grade }}</span>

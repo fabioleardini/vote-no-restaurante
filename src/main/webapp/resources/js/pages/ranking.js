@@ -1,5 +1,6 @@
 function rankingController($scope, $http, $window) {
 	$scope.url = "/vote-no-restaurante/protected/";
+	$scope.useremail;
 	
 	$scope.getGeneralRankingList = function(){
         var url = $scope.url + "restaurant/all";
@@ -17,6 +18,7 @@ function rankingController($scope, $http, $window) {
 		$http.get(url)
 		.success(function (data) {
 			$scope.rankings = data;
+			$scope.useremail = data[0].useremail;
 		});
 	}
 
