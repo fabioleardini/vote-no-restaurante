@@ -1,1 +1,1 @@
-web: java -cp target\classes;target\dependency\* Main
+web: mvn clean install tomcat7:run
