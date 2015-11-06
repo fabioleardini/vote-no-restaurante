@@ -17,7 +17,9 @@
     <jee:jndi-lookup id="myContactDataSource" jndi-name="jdbc/tomcatDataSource" lookup-on-startup="false"
                      proxy-interface="javax.sql.DataSource"/>
 
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"/>
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
