@@ -1,5 +1,5 @@
 function welcomeController($scope, $http, $window) {
-    $scope.url = "/vote-no-restaurante/protected/";
+    $scope.url = "/protected/";
 	
 	$scope.options = [{ id: 0, name: '0 (Não sei avaliar)' }, { id: 1, name: '1' }, 
 	{ id: 2, name: '2' }, { id: 3, name: '3' }, { id: 4, name: '4' }, { id: 5, name: '5' }];
