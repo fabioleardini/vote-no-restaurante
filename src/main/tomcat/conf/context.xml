@@ -8,6 +8,7 @@
               maxIdle="30"
               maxWait="10000"
               username="SA"
+              password=""
               driverClassName="org.hsqldb.jdbc.JDBCDriver"
-              url="jdbc:hsqldb:mem:."/>
+              url="jdbc:hsqldb:file:testdb"/>
 </Context>
