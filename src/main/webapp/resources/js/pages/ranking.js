@@ -1,5 +1,5 @@
 function rankingController($scope, $http, $window) {
-	$scope.url = "/vote-no-restaurante/protected/";
+	$scope.url = "/protected/";
 	$scope.useremail;
 	
 	$scope.getGeneralRankingList = function(){
