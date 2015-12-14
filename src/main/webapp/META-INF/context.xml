@@ -10,5 +10,5 @@
               username="SA"
               password=""
               driverClassName="org.hsqldb.jdbc.JDBCDriver"
-              url="jdbc:hsqldb:file:testdb"/>
+              url="jdbc:hsqldb:mem:."/>
 </Context>
